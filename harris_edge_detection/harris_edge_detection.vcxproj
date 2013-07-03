@@ -139,6 +139,8 @@
   <ItemGroup>
     <ClCompile Include="EdgeDetector.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MaxNode.cpp" />
+    <ClCompile Include="MaxTree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="EdgeDetector.h">
@@ -171,6 +173,10 @@
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </AdditionalInputs>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MaxNode.h" />
+    <ClInclude Include="MaxTree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

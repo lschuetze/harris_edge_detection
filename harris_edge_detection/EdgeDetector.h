@@ -16,9 +16,11 @@ public:
 	EdgeDetector(QImage const& img);
 	virtual ~EdgeDetector(void);
 
-	QImage apply();
+	QImage apply(consts::mode mode);
 protected:
 	void prepare(void);
+	QImage apply_fast(void);
+	QImage apply_slow(void);
 private:
 	QImage originalImage;
 	QImage grayedImage;
@@ -26,7 +28,6 @@ private:
 	int width;
 	float** H;
 	float mean;
-	consts::mode mode;	
 };
 
 static QImage grayScale(QImage const& in)

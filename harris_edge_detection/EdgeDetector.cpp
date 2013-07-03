@@ -64,7 +64,23 @@ void EdgeDetector::prepare(void)
 	}
 }
 
-QImage EdgeDetector::apply(void)
+QImage EdgeDetector::apply(consts::mode mode)
+{
+	switch(mode)
+	{
+	case consts::mode::fast:
+		return apply_fast();
+	case consts::mode::slow:
+		return apply_slow();
+	}
+}
+
+QImage EdgeDetector::apply_fast(void)
+{
+	return QImage();
+}
+
+QImage EdgeDetector::apply_slow(void)
 {
 	//window
 	int w = 1;
