@@ -1,7 +1,7 @@
 #include "MaxNode.h"
 
 
-MaxNode::MaxNode(float value, int x, int y)
+MaxNode::MaxNode(T value, int x, int y)
 {
 	this->value = value;
 	this-> x = x;
