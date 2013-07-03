@@ -16,26 +16,16 @@ EdgeDetector::EdgeDetector(QImage const& image)
 		H[i] = (float*) malloc(height * sizeof(float));
 	}
 
-	/*
-	for(int i = 0; i < width; ++i)
-		for(int j = 0; j < height; ++j)
-			H[i][j] = 0.0f;
-			*/
-
 	prepare();
 
 
 	mean = 0.0f;
-	float min = 0.0f; float max = 0.0f;
 	for(int i = 0; i < width; ++i)
 		for(int j = 0; j < height; ++j)
 		{
 			mean += H[i][j];
-			//max = std::max(max, H[i][j]);
-			//min = std::min(min, H[i][j]);
 		}
 	mean /= height*width;
-	//mean = (max + min) / 2;
 }
 
 
@@ -45,29 +35,6 @@ EdgeDetector::~EdgeDetector(void)
 		free(H[i]);
 	free(H);
 }
-
-//calculate corner response for every pixel
-/*
-void EdgeDetector::prepare(void)
-{
-	float A, B, C;
-	A = B = C = 0.0f;
-	for(int x = 1; x < width - 1; ++x)
-	{
-		for(int y = 1; y < height - 1; ++y)
-		{
-			float X = dIx(grayedImage, x, y);
-			float Y = dIy(grayedImage, x, y);
-
-			A = pow(X, 2);
-			B = pow(Y, 2);
-			C = X * Y;
-
-			H[x][y] = A * B - pow(C, 2) - 0.04f * (A + B);
-		}
-	}
-}
-*/
 
 void EdgeDetector::prepare(void)
 {
@@ -120,6 +87,7 @@ QImage EdgeDetector::apply(void)
 			}
 			if(flag)
 			{
+				//reduce noise
 				if(current > mean)
 					originalImage.setPixel(x, y, qRgba(255, 0, 0, 255));
 			}
