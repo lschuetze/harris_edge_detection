@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-	consts::mode mode = consts::mode::slow;
+	consts::mode mode = consts::mode::fast;
 	if(argc > 2)
 	{
 		if(std::string(argv[2]) == "--slow")

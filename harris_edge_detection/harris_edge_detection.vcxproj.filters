@@ -27,10 +27,10 @@
     <ClCompile Include="EdgeDetector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MaxTree.cpp">
+    <ClCompile Include="min_tree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MaxNode.cpp">
+    <ClCompile Include="node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -40,10 +40,10 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MaxTree.h">
+    <ClInclude Include="min_tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MaxNode.h">
+    <ClInclude Include="node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
