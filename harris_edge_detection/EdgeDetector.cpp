@@ -77,6 +77,8 @@ QImage EdgeDetector::apply(consts::mode mode)
 
 QImage EdgeDetector::apply_fast(void)
 {
+	int w = 1;
+	
 	return QImage();
 }
 
