@@ -34,9 +34,9 @@ int main(int argc, char *argv[])
 	}
 #endif
 
-	QImage image("Resources/input.png");
+	QImage image("Resources/input.jpg");
 	EdgeDetector ed(image);
 	QImage out = ed.apply(mode);
-	out.save("Resources/output.png");
+	out.save("Resources/output.jpg");
 	return 0;
 }

@@ -4,6 +4,8 @@
 #include "min_tree.h"
 #include "node.h"
 
+//initialize the class
+//initialize the matrix
 EdgeDetector::EdgeDetector(QImage const& image)
 	: height(image.height()), width(image.width())
 {
@@ -36,6 +38,7 @@ EdgeDetector::~EdgeDetector(void)
 	free(H);
 }
 
+//precompute matrix for integral image approach
 void EdgeDetector::prepare(void)
 {
 	float A, B, C;
@@ -81,6 +84,10 @@ QImage EdgeDetector::apply(consts::mode mode)
 	}
 }
 
+//this uses the min-max approach (from morphological filters)
+//there are 2 trees for each dimension
+//the first dimension computes the maxima in each row (in the vicinity)
+//the 2nd dimension computes the maxima from each col (in the vicinity)
 QImage EdgeDetector::apply_fast(void)
 {
 	int w = 1;
@@ -151,6 +158,8 @@ QImage EdgeDetector::apply_fast(void)
 	return originalImage;
 }
 
+//this is the slow approach just iterating over the image and calculating the
+//maxima in each window
 QImage EdgeDetector::apply_slow(void)
 {
 	//window

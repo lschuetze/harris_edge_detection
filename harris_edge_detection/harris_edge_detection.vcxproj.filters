@@ -38,13 +38,16 @@
     <CustomBuild Include="EdgeDetector.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="min_tree.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="node.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="min_tree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <None Include="harris_edge_detection.pro">
+      <Filter>Generated Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

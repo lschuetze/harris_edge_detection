@@ -30,6 +30,7 @@ private:
 	float mean;
 };
 
+//grays an image
 static QImage grayScale(QImage const& in)
 {
 	QImage out(in);
@@ -46,6 +47,7 @@ static QImage grayScale(QImage const& in)
 	return out;
 }
 
+//corner response function as stated in the paper
 static float CornerResponse(float A, float B, float C, const float k = 0.04f)
 {
 	float tr = A + B;
